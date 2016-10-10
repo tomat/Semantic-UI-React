@@ -2,8 +2,8 @@ import cx from 'classnames'
 import React, { Component, PropTypes } from 'react'
 
 import {
-  createShorthand,
-  createShorthandFactory,
+  createShorthandItem,
+  createShorthandItemFactory,
   customPropTypes,
   getElementType,
   getUnhandledProps,
@@ -194,7 +194,7 @@ export default class Label extends Component {
         {Icon.create(icon)}
         {typeof image !== 'boolean' && Image.create(image)}
         {content}
-        {createShorthand(LabelDetail, val => ({ content: val }), detail)}
+        {createShorthandItem(LabelDetail, val => ({ content: val }), detail)}
         {(removable || onRemove) && (
           <Icon name='delete' onClick={this.handleRemove} />
         )}
@@ -205,4 +205,4 @@ export default class Label extends Component {
 
 // Label is not yet defined inside the class
 // Do not use a static property initializer
-Label.create = createShorthandFactory(Label, value => ({ content: value }))
+Label.create = createShorthandItemFactory(Label, value => ({ content: value }))

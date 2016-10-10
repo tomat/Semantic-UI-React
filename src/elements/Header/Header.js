@@ -2,7 +2,7 @@ import _ from 'lodash'
 import cx from 'classnames'
 import React, { PropTypes } from 'react'
 import {
-  createShorthand,
+  createShorthandItem,
   customPropTypes,
   getElementType,
   getUnhandledProps,
@@ -62,7 +62,7 @@ function Header(props) {
         {(content || subheader) && (
           <HeaderContent>
             {content}
-            {createShorthand(HeaderSubheader, val => ({ content: val }), subheader)}
+            {createShorthandItem(HeaderSubheader, val => ({ content: val }), subheader)}
           </HeaderContent>
         )}
       </ElementType>
@@ -72,7 +72,7 @@ function Header(props) {
   return (
     <ElementType {...rest} className={classes}>
       {content}
-      {createShorthand(HeaderSubheader, val => ({ content: val }), subheader)}
+      {createShorthandItem(HeaderSubheader, val => ({ content: val }), subheader)}
     </ElementType>
   )
 }
