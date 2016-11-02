@@ -1,5 +1,59 @@
 # Change Log
 
+## [v0.58.0](https://github.com/Semantic-Org/Semantic-UI-React/tree/v0.58.0) (2016-10-28)
+[Full Changelog](https://github.com/Semantic-Org/Semantic-UI-React/compare/v0.57.1...v0.58.0)
+
+**Fixed bugs:**
+
+- Accordion defaultActiveIndex [\#761](https://github.com/Semantic-Org/Semantic-UI-React/issues/761)
+
+**Merged pull requests:**
+
+- fix\(Accordion\): respect defaultActiveIndex [\#763](https://github.com/Semantic-Org/Semantic-UI-React/pull/763) ([levithomason](https://github.com/levithomason))
+- docs\(ComponentDoc\): show props by default [\#762](https://github.com/Semantic-Org/Semantic-UI-React/pull/762) ([levithomason](https://github.com/levithomason))
+- breaking\(Reveal\): change prop name [\#760](https://github.com/Semantic-Org/Semantic-UI-React/pull/760) ([layershifter](https://github.com/layershifter))
+- webpack-hot-middleware@2.13.1 untested ⚠️ [\#758](https://github.com/Semantic-Org/Semantic-UI-React/pull/758) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- style\(Button\): update docs to the latest standards, add missing prop … [\#756](https://github.com/Semantic-Org/Semantic-UI-React/pull/756) ([dpkwhan](https://github.com/dpkwhan))
+- Update brace to version 0.9.0 🚀 [\#753](https://github.com/Semantic-Org/Semantic-UI-React/pull/753) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update react-router to version 3.0.0 🚀 [\#743](https://github.com/Semantic-Org/Semantic-UI-React/pull/743) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- fix\(dropdown\): render text when option.value = 0 [\#686](https://github.com/Semantic-Org/Semantic-UI-React/pull/686) ([Chris-R3](https://github.com/Chris-R3))
+
+## [v0.57.1](https://github.com/Semantic-Org/Semantic-UI-React/tree/v0.57.1) (2016-10-28)
+[Full Changelog](https://github.com/Semantic-Org/Semantic-UI-React/compare/v0.57.0...v0.57.1)
+
+**Implemented enhancements:**
+
+- feat\(Item.Image\): Add size prop [\#747](https://github.com/Semantic-Org/Semantic-UI-React/pull/747) ([clemensw](https://github.com/clemensw))
+
+**Fixed bugs:**
+
+- Item.Image doesn't honor size prop [\#746](https://github.com/Semantic-Org/Semantic-UI-React/issues/746)
+
+## [v0.57.0](https://github.com/Semantic-Org/Semantic-UI-React/tree/v0.57.0) (2016-10-28)
+[Full Changelog](https://github.com/Semantic-Org/Semantic-UI-React/compare/v0.56.14...v0.57.0)
+
+**Merged pull requests:**
+
+- breaking\(BreadcrumbSection\): change `text` prop to `content` [\#755](https://github.com/Semantic-Org/Semantic-UI-React/pull/755) ([levithomason](https://github.com/levithomason))
+
+## [v0.56.14](https://github.com/Semantic-Org/Semantic-UI-React/tree/v0.56.14) (2016-10-27)
+[Full Changelog](https://github.com/Semantic-Org/Semantic-UI-React/compare/v0.56.13...v0.56.14)
+
+**Implemented enhancements:**
+
+- \<Reveal /\> Component [\#182](https://github.com/Semantic-Org/Semantic-UI-React/issues/182)
+- feat\(Popup\): Enabled controlled usage [\#749](https://github.com/Semantic-Org/Semantic-UI-React/pull/749) ([jcarbo](https://github.com/jcarbo))
+- feat\(Reveal\): Add component [\#748](https://github.com/Semantic-Org/Semantic-UI-React/pull/748) ([layershifter](https://github.com/layershifter))
+
+**Closed issues:**
+
+- Grid centered not rendered properly [\#752](https://github.com/Semantic-Org/Semantic-UI-React/issues/752)
+- Does the \<Popup/\> Component have 'manual' behavior as the normal popup does? [\#727](https://github.com/Semantic-Org/Semantic-UI-React/issues/727)
+
+**Merged pull requests:**
+
+- style\(Segment\): update docs to latest standards [\#751](https://github.com/Semantic-Org/Semantic-UI-React/pull/751) ([dpkwhan](https://github.com/dpkwhan))
+
 ## [v0.56.13](https://github.com/Semantic-Org/Semantic-UI-React/tree/v0.56.13) (2016-10-25)
 [Full Changelog](https://github.com/Semantic-Org/Semantic-UI-React/compare/v0.56.12...v0.56.13)
 

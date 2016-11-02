@@ -603,6 +603,60 @@ describe('Dropdown Component', () => {
         .find('.text')
         .should.contain.text(item.text())
     })
+    it('displays if value is 0', () => {
+      const text = faker.hacker.noun()
+
+      wrapperMount(<Dropdown options={[{ value: 0, text }]} selection />)
+
+      // open
+      wrapper.simulate('click')
+
+      // click item
+      const item = wrapper
+        .find('DropdownItem')
+        .simulate('click')
+
+      // text updated
+      wrapper
+        .find('.text')
+        .should.contain.text(item.text())
+    })
+    it('does not display if value is \'\'', () => {
+      const text = faker.hacker.noun()
+
+      wrapperMount(<Dropdown options={[{ value: '', text }]} selection />)
+        .simulate('click')
+        .find('DropdownItem')
+        .simulate('click')
+
+      wrapper
+        .find('.text')
+        .should.contain.text('')
+    })
+    it('does not display if value is null', () => {
+      const text = faker.hacker.noun()
+
+      wrapperMount(<Dropdown options={[{ value: null, text }]} selection />)
+        .simulate('click')
+        .find('DropdownItem')
+        .simulate('click')
+
+      wrapper
+        .find('.text')
+        .should.contain.text('')
+    })
+    it('does not display if value is undefined', () => {
+      const text = faker.hacker.noun()
+
+      wrapperMount(<Dropdown options={[{ value: undefined, text }]} selection />)
+        .simulate('click')
+        .find('DropdownItem')
+        .simulate('click')
+
+      wrapper
+        .find('.text')
+        .should.contain.text('')
+    })
   })
 
   describe('trigger', () => {
@@ -1511,7 +1565,7 @@ describe('Dropdown Component', () => {
 
       wrapper
         .find('DropdownItem')
-        .last()
+        .first()
         .should.have.prop('value', 'a')
     })
 
@@ -1527,12 +1581,20 @@ describe('Dropdown Component', () => {
 
       wrapper
         .find('DropdownItem')
-        .should.have.prop('text', 'Add: boo')
+        .last()
+        .should.have.prop('className', 'addition')
+
+      const text = wrapper
+        .find('DropdownItem')
+        .prop('text')
+
+      expect(text[0]).to.equal('Add ')
+      shallow(text[1]).equals(<b key='addition'>boo</b>)
     })
 
-    it('uses custom additionLabel', () => {
+    it('uses custom additionLabel string', () => {
       const search = wrapperMount(
-        <Dropdown options={customOptions} selection search allowAdditions additionLabel='New:' />
+        <Dropdown options={customOptions} selection search allowAdditions additionLabel='New: ' />
       )
         .find('input.search')
 
@@ -1544,7 +1606,40 @@ describe('Dropdown Component', () => {
 
       wrapper
         .find('DropdownItem')
-        .should.have.prop('text', 'New: boo')
+        .last()
+        .should.have.prop('className', 'addition')
+
+      const text = wrapper
+        .find('DropdownItem')
+        .prop('text')
+
+      expect(text[0]).to.equal('New: ')
+      shallow(text[1]).equals(<b key='addition'>boo</b>)
+    })
+
+    it('uses custom additionLabel element', () => {
+      const search = wrapperMount(
+        <Dropdown options={customOptions} selection search allowAdditions additionLabel={<i>New: </i>} />
+      )
+        .find('input.search')
+
+      search.simulate('change', { target: { value: 'boo' } })
+
+      wrapper
+        .find('DropdownItem')
+        .should.have.lengthOf(1)
+
+      wrapper
+        .find('DropdownItem')
+        .last()
+        .should.have.prop('className', 'addition')
+
+      const text = wrapper
+        .find('DropdownItem')
+        .prop('text')
+
+      shallow(text[0]).equals(<i key='label'>New: </i>)
+      shallow(text[1]).equals(<b key='addition'>boo</b>)
     })
 
     it('uses no additionLabel', () => {
@@ -1561,11 +1656,21 @@ describe('Dropdown Component', () => {
 
       wrapper
         .find('DropdownItem')
-        .should.have.prop('text', 'boo')
+        .last()
+        .should.have.prop('className', 'addition')
+
+      const text = wrapper
+        .find('DropdownItem')
+        .prop('text')
+
+      expect(text[0]).to.equal('')
+      shallow(text[1]).equals(<b key='addition'>boo</b>)
     })
 
     it('keeps custom value option (bottom) when options change', () => {
-      const search = wrapperMount(<Dropdown options={customOptions} selection search allowAdditions />)
+      const search = wrapperMount(
+        <Dropdown options={customOptions} selection search allowAdditions additionPosition='bottom' />
+      )
         .find('input.search')
 
       search.simulate('change', { target: { value: 'a' } })
@@ -1593,7 +1698,7 @@ describe('Dropdown Component', () => {
 
     it('keeps custom value option (top) when options change', () => {
       const search = wrapperMount(
-        <Dropdown options={customOptions} selection search allowAdditions additionPosition='top' />
+        <Dropdown options={customOptions} selection search allowAdditions />
       )
         .find('input.search')
 

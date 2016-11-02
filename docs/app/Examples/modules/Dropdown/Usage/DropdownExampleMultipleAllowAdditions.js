@@ -32,8 +32,6 @@ class DropdownExampleAllowAdditions extends Component {
         fluid
         multiple
         allowAdditions
-        additionPosition='top'
-        additionLabel=''
         value={currentValues}
         onAddItem={this.handleAddition}
         onChange={this.handleChange}
