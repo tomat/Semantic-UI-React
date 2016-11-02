@@ -13,7 +13,8 @@
     ["transform-runtime", {
       "polyfill": false,
       "regenerator": false
-    }]
+    }],
+    "./lib/handled-props"
   ],
   "env": {
     "development": {
