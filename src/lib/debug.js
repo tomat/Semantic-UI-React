@@ -1,11 +1,7 @@
 let _debug
 const noop = () => undefined
 
-if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
-  _debug = require('debug')
-} else {
-  _debug = () => noop
-}
+_debug = () => noop
 
 /**
  * Create a namespaced debug function.
